@@ -1,0 +1,21 @@
+label {
+  font-size: .9rem;
+}
+
+.encrypt-cesar-wrapper {
+  width: 20%;
+}
+
+.encrypt-cesar-form, .decrypt-cesar-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 2rem;
+}
+
+.encrypt-cesar-form-field, .decrypt-cesar-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+
