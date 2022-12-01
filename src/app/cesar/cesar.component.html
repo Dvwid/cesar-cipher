@@ -1,18 +1,20 @@
 <h1>Szyfrowanie metodą Cezara</h1>
 <h4>Dawid Hutyra - 3921</h4>
 
-<div class="encrypt-cesar-wrapper">
+<form class="encrypt-cesar-wrapper">
   <div class="encrypt-cesar-form">
     <div class="encrypt-cesar-form-field">
       <label>{{'Przesunięcie'}}</label>
-      <input type="text" [(ngModel)]="shift" (input)="cipher(encryptingWord, shift); decipher(decryptingWord, shift)"/>
+      <input type="text" [(ngModel)]="shift" name="shift"
+             (input)="cipher(encryptingWord, shift); decipher(decryptingWord, shift)"/>
     </div>
   </div>
 
   <div class="encrypt-cesar-form">
     <div class="encrypt-cesar-form-field">
       <label>{{'Zaszyfruj algorytmem cezara'}}</label>
-      <input type="text" [(ngModel)]="encryptingWord" (input)="cipher(encryptingWord, shift)"/>
+      <input type="text" [(ngModel)]="encryptingWord" (input)="cipher(encryptingWord.toUpperCase(), shift)"
+             name="encWord"/>
     </div>
     Wynik: {{cipheredText}}
   </div>
@@ -20,12 +22,13 @@
   <div class="decrypt-cesar-form">
     <div class="decrypt-cesar-form-field">
       <label>Odszyfruj algorytm cezara</label>
-      <input type="text" [(ngModel)]="decryptingWord" (input)="decipher(decryptingWord, shift)"/>
+      <input type="text" [(ngModel)]="decryptingWord" (input)="decipher(decryptingWord.toUpperCase(), shift)"
+             name="decWord"/>
     </div>
     Wynik: {{decipheredText}}
 
   </div>
-</div>
+</form>
 
 
 

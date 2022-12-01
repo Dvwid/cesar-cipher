@@ -1,0 +1,63 @@
+<h1>Problem plecakowy</h1>
+<h4>Dawid Hutyra - 3921</h4>
+
+<form class="encrypt-cesar-wrapper">
+  <div class="encrypt-cesar-form">
+    <div class="encrypt-cesar-form-field">
+      <label>Pojemność</label>
+      <input type="number" [(ngModel)]="capacity" name="capacity" (input)="knapsack()"/>
+    </div>
+  </div>
+
+  <div class="encrypt-cesar-form-field">
+    <label>Nazwa przedmiotu</label>
+    <input [(ngModel)]="itemName" (input)="knapsack()" name="itemName"/>
+  </div>
+  <div class="encrypt-cesar-form-field">
+    <label>Wartość</label>
+    <input type="number" [(ngModel)]="itemValue" name="itemValue" (input)="knapsack()"/>
+  </div>
+  <div class="encrypt-cesar-form-field">
+    <label>Waga</label>
+    <input type="number" [(ngModel)]="itemWeight" name="itemWeight" (input)="knapsack()"/>
+  </div>
+  <button (click)="addItem()">Dodaj przedmiot</button>
+
+  <div>
+    <h4>Dodane przedmioty</h4>
+    <div style="display:flex; justify-content: space-around; border: 1px solid black; padding: .5rem">
+      <div>Nazwa</div>
+      <div>Wartość</div>
+      <div>Waga</div>
+      <div>Akcje</div>
+    </div>
+    <div *ngFor="let item of items"
+         style="display:flex; border: 1px solid black; padding: .5rem; justify-content: space-around;">
+      <div>{{item?.name}}</div>
+      <div>{{item?.value}}</div>
+      <div>{{item?.weight}}</div>
+      <div (click)="removeItem(item.name)" style="cursor: pointer">Usuń</div>
+    </div>
+  </div>
+
+  <div>
+    <h4>Dobrane przedmioty:</h4>
+    <div style="display:flex; justify-content: space-around; border: 1px solid black; padding: .5rem">
+      <div>Nazwa</div>
+      <div>Wartość</div>
+      <div>Waga</div>
+    </div>
+    <div *ngFor="let item of knapsackItems"
+         style="display:flex; border: 1px solid black; padding: .5rem; justify-content: space-around;">
+      <div>{{item?.name}}</div>
+      <div>{{item?.value}}</div>
+      <div>{{item?.weight}}</div>
+    </div>
+  </div>
+
+
+</form>
+
+
+
+

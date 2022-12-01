@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CesarComponent } from './cesar/cesar.component';
 import {FormsModule} from "@angular/forms";
+import { KnapsackComponent } from './knapsack/knapsack.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CesarComponent
+    CesarComponent,
+    KnapsackComponent
   ],
     imports: [
         BrowserModule,
